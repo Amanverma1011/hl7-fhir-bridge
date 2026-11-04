@@ -1,0 +1,35 @@
+# Full local stack: HAPI FHIR server + bridge REST API + bridge MLLP listener.
+#   docker compose up --build
+#   FHIR server:  http://localhost:8080/fhir
+#   Bridge API:   http://localhost:8000/docs
+#   MLLP:         localhost:2575
+services:
+  fhir:
+    image: hapiproject/hapi:v7.4.0
+    ports:
+      - "8080:8080"
+
+  bridge-api:
+    build: .
+    environment:
+      FHIR_SERVER_URL: http://fhir:8080/fhir
+      DEFAULT_TIMEZONE: ${DEFAULT_TIMEZONE:-+05:30}
+      IDENTIFIER_SYSTEM_BASE: ${IDENTIFIER_SYSTEM_BASE:-http://hospital.example.org/identifiers}
+    ports:
+      - "8000:8000"
+    depends_on:
+      - fhir
+
+  bridge-mllp:
+    build: .
+    command: ["hl7fhir", "serve-mllp"]
+    environment:
+      FHIR_SERVER_URL: http://fhir:8080/fhir
+      MLLP_HOST: 0.0.0.0
+      MLLP_PORT: "2575"
+      DEFAULT_TIMEZONE: ${DEFAULT_TIMEZONE:-+05:30}
+      IDENTIFIER_SYSTEM_BASE: ${IDENTIFIER_SYSTEM_BASE:-http://hospital.example.org/identifiers}
+    ports:
+      - "2575:2575"
+    depends_on:
+      - fhir

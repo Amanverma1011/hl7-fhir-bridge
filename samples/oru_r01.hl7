@@ -1,0 +1,14 @@
+MSH|^~\&|LIS|CITYLAB|HL7FHIRBRIDGE|CITYHOSP|20261105101500+0530||ORU^R01^ORU_R01|LAB778899|P|2.5.1
+PID|1||MRN100234^^^CITYHOSP^MR||Sharma^Priya||19900214|F
+PV1|1|I|CARDIO^0412^A^CITYHOSP||||||||||||||||V20261105-01^^^CITYHOSP^VN|||||||||||||||||||||||||20261105081500+0530
+ORC|RE|ORD5521^EPIC|FIL9981^LIS
+OBR|1|ORD5521^EPIC|FIL9981^LIS|57698-3^Lipid panel with direct LDL - Serum or Plasma^LN|||20261105090000+0530|||||||||D4521^Rao^Anil^^^Dr.||||||20261105101000+0530||CH|F
+NTE|1||Fasting sample (12 hours).
+OBX|1|NM|2093-3^Cholesterol [Mass/volume] in Serum or Plasma^LN||245|mg/dL^mg/dL^UCUM|<200|H|||F|||20261105090000+0530
+OBX|2|NM|2571-8^Triglyceride [Mass/volume] in Serum or Plasma^LN||150|mg/dL^mg/dL^UCUM|<150|N|||F|||20261105090000+0530
+OBX|3|NM|18262-6^Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay^LN||162|mg/dL^mg/dL^UCUM|<100|H|||F|||20261105090000+0530
+OBX|4|NM|2085-9^Cholesterol in HDL [Mass/volume] in Serum or Plasma^LN||38|mg/dL^mg/dL^UCUM|>40|L|||F|||20261105090000+0530
+ORC|RE|ORD5522^EPIC|FIL9982^LIS
+OBR|2|ORD5522^EPIC|FIL9982^LIS|10839-9^Troponin I.cardiac [Mass/volume] in Serum or Plasma^LN|||20261105090000+0530|||||||||D4521^Rao^Anil^^^Dr.||||||20261105101000+0530||CH|F
+OBX|1|NM|10839-9^Troponin I.cardiac [Mass/volume] in Serum or Plasma^LN||2.31|ng/mL^ng/mL^UCUM|0.00-0.04|HH|||F|||20261105090000+0530
+NTE|1||Critical value phoned to Dr. Rao at 10:12 and read back.
